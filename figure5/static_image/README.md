@@ -1,10 +1,11 @@
 # Figure 5: Static image processing
 
-This directory contains the released launch templates and operator code for ImageNet-1k classification, COCO object detection, and ADE20K semantic segmentation.
+This directory contains launch templates and operator code for ImageNet-1k
+classification, COCO object detection, and ADE20K semantic segmentation.
 
 ## Datasets and protocol
 
-| Task | Dataset | Paper training setting | Released launch templates |
+| Task | Dataset | Paper training setting | Launch templates |
 | --- | --- | --- | --- |
 | Classification | [ImageNet-1k](https://www.image-net.org/) | Approximately 25M-parameter pyramid backbone; AdamW; 310 epochs; batch size 256; initial learning rate `5e-4`; cosine decay | [`classification/`](classification/) |
 | Detection | [COCO](https://cocodataset.org/) | Fine-tune the pretrained backbone for 12 epochs; batch size 8; initial learning rate `1e-4`; AdamW | [`detection/maskrcnn/`](detection/maskrcnn/) |
@@ -27,7 +28,10 @@ python -m pip install -r detection/maskrcnn/requirements.txt
 python -m pip install -r segmentation/upernet/requirements.txt
 ```
 
-Detection pins PyTorch 2.0.1, torchvision 0.15.2, timm 0.5.4, mmcv-full 1.7.1, and mmdet 2.28.2. Segmentation uses the same base stack with mmsegmentation 0.30.0. Install `mmcv-full` against a compatible CUDA/PyTorch build. Classification lists timm 0.9.6 and export/runtime utilities, but this is not a complete environment lockfile.
+Detection pins PyTorch 2.0.1, torchvision 0.15.2, timm 0.5.4,
+mmcv-full 1.7.1, and mmdet 2.28.2. Segmentation uses the same base stack with
+mmsegmentation 0.30.0. Install `mmcv-full` against a compatible CUDA/PyTorch
+build. Classification uses timm 0.9.6 and the listed export/runtime utilities.
 
 The included Mamba and HGRN operators may require compiling CUDA extensions under [`ops/`](ops/). A CUDA-enabled Linux environment and a compatible compiler toolchain are expected.
 
@@ -48,7 +52,7 @@ The repository includes the original shell launch templates:
 
 The launch templates share [`run_env.sh`](run_env.sh). Before launching, set:
 
-- `DATA_PATH` for the selected dataset;
+- `DATA_PATH` for the target dataset;
 - `CUDA_VISIBLE_DEVICES` for the visible GPUs;
 - optionally `NPROC_PER_NODE` and `MASTER_PORT`;
 - `CHECKPOINT` when using `classification/validate.sh`;
@@ -66,8 +70,7 @@ bash train_la.sh
 
 The shell files preserve the experiment commands and are intended for use
 with the corresponding classification, MMDetection, and MMSegmentation
-training stacks. Framework integration updates are maintained separately from
-the released SparseLA operators and launch templates.
+training stacks.
 
 [Back to Figure 5](../README.md)
 

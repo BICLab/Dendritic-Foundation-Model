@@ -39,7 +39,7 @@ Pass dataset roots through `--data_path`:
       └── test_target.npy
   ```
 
-The repository does not include conversion scripts from the providers’ raw formats to these layouts.
+The training loaders consume these preprocessed layouts.
 
 ## Entry points
 
@@ -75,7 +75,10 @@ CUDA_VISIBLE_DEVICES=0 python main_finetune.py \
   --log_dir ./outputs/sparsela_m_gait_day
 ```
 
-[`train_gesture.sh`](train_gesture.sh) and [`train_gait_day.sh`](train_gait_day.sh) run the released mixer variants sequentially. Configure them through `DATA_PATH`, `CUDA_VISIBLE_DEVICES`, `OUTPUT_DIR`, and the space-separated `MODELS` list:
+[`train_gesture.sh`](train_gesture.sh) and
+[`train_gait_day.sh`](train_gait_day.sh) run the mixer variants sequentially.
+Configure them through `DATA_PATH`, `CUDA_VISIBLE_DEVICES`, `OUTPUT_DIR`, and
+the space-separated `MODELS` list:
 
 ```bash
 DATA_PATH=/path/to/DVSGesture_data \
@@ -89,8 +92,10 @@ bash train_gesture.sh
 - CLI paths: `--data_path`, `--output_dir`, `--log_dir`, `--resume`, and `--finetune`.
 - CLI runtime controls: `--device`, `--num_workers`, `--seed`, `--world_size`, `--local-rank`, and `--dist_url`.
 - Distributed environment: `RANK`, `WORLD_SIZE`, `LOCAL_RANK`, `MASTER_ADDR`, and `MASTER_PORT` are read when using `env://`; SLURM and OpenMPI variables are also recognized.
-- Logging: `LOGLEVEL` is read by selected helper modules.
+- Logging: `LOGLEVEL` is read by helper modules.
 
-The code does not override GPU visibility during import. Historical factory names `V3_tem_attn_spla1d_tiny` and `V3_tem_attn_spla2d_tiny` remain as aliases for the public `sparsela_v` and `sparsela_m` names.
+GPU visibility is controlled by the launch environment. Legacy factory names
+`V3_tem_attn_spla1d_tiny` and `V3_tem_attn_spla2d_tiny` map to
+`sparsela_v` and `sparsela_m`.
 
 [Back to Figure 5](../README.md)

@@ -36,7 +36,10 @@ output directories automatically.
 
 ## Training protocol and entry points
 
-The paper trains an MLP encoder followed by two meta-blocks, keeps models near 0.3M parameters, and reports five runs. The common protocol is 200 epochs, AdamW, cosine learning-rate decay, weight decay `0.1`, and an initial learning rate selected from `1e-2` or `5e-3`.
+The paper trains an MLP encoder followed by two meta-blocks, keeps models near
+0.3M parameters, and reports five runs. The common protocol is 200 epochs,
+AdamW, cosine learning-rate decay, weight decay `0.1`, and an initial learning
+rate of `1e-2` or `5e-3`.
 
 The actual Python entry files are:
 
@@ -60,7 +63,7 @@ CUDA_VISIBLE_DEVICES=0 python ssc_train.py \
 Supported command-line controls include `--data-path`, `--channel_size`,
 `--seed`, `--batch_size`, `--optimizer`, `--scheduler`, `--learning_rate`,
 `--weight_decay`, `--epochs`, and `--block`. Public SparseLA block names are
-`sparsela_v` and `sparsela_m`; historical `spla1d` and `spla2d` names remain
+`sparsela_v` and `sparsela_m`; legacy `spla1d` and `spla2d` names remain
 accepted for compatibility.
 
 The convenience wrappers run five seeds and create their log directories:
@@ -73,7 +76,7 @@ DATA_PATH=./data/shd CUDA_VISIBLE_DEVICES=0 bash run_shd.sh
 Override `BLOCK`, `SEEDS`, `OUTPUT_DIR`, or `RUN_IN_BACKGROUND=1` as needed.
 
 The required HGRN implementation is bundled under
-[`hgru2_pytorch/`](hgru2_pytorch/). The SHD trainer retains its historical
-300-epoch default; pass `--epochs 200` for the paper protocol.
+[`hgru2_pytorch/`](hgru2_pytorch/). For SHD, pass `--epochs 200` to match the
+paper protocol; the script default is 300.
 
 [Back to Figure 5](../README.md)

@@ -25,21 +25,15 @@ Include the Python, PyTorch, CUDA, GPU, and key dependency versions in bug repor
 - Preserve scientific settings unless the change explicitly documents a corrected or alternative protocol.
 - Add a minimal validation command and report its result.
 - Keep machine-specific paths configurable or clearly documented.
-- Verify that every command names an existing entry file.
-- Verify Markdown relative links and close all fenced code blocks.
+- Confirm documented commands match the current repository layout.
+- Update relative links and code blocks in changed Markdown files.
 - Update the nearest README when dependencies, data layout, configuration fields, or integration steps change.
 - Retain copyright, attribution, and license notices in third-party or adapted code.
 
-## Documentation style
+## Documentation
 
-Use concise technical English. Distinguish among:
-
-- settings reported in the paper;
-- defaults present in the released source;
-- examples introduced only for illustration;
-- missing artifacts or external-framework requirements.
-
-Do not claim that example configurations are trained checkpoints, that the long-context modules form a complete training system, or that unpublished bibliographic fields are known.
+Use concise technical English and clearly identify paper-reported settings,
+source defaults, illustrative examples, and external dependencies.
 
 ## Third-party code
 

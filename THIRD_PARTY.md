@@ -5,14 +5,11 @@ with third-party projects. Those files remain subject to their upstream
 licenses; the repository-level Apache License 2.0 does not override these
 terms.
 
-## Why `third_party_licenses/` exists
+## License texts
 
-The repository contains adapted or copied code whose upstream licenses differ
-from the project-level Apache License 2.0. The
-[`third_party_licenses/`](third_party_licenses/) directory preserves the full
-license texts when the corresponding upstream notice is not already bundled
-next to the code. It has no runtime role and is included solely for
-attribution and redistribution compliance.
+The [`third_party_licenses/`](third_party_licenses/) directory preserves full
+upstream license texts when a notice is not already bundled next to the
+adapted code.
 
 ## Bundled or adapted components
 

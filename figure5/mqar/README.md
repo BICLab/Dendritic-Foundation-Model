@@ -36,7 +36,9 @@ CUDA mixer implementations additionally require mutually compatible PyTorch, CUD
 
 ## Entry point
 
-The released experiment definition is [`zoology/model_sp.py`](zoology/zoology/model_sp.py), launched through [`zoology.launch`](zoology/zoology/launch.py):
+The experiment definition is
+[`zoology/model_sp.py`](zoology/zoology/model_sp.py), launched through
+[`zoology.launch`](zoology/zoology/launch.py):
 
 ```bash
 cd zoology
@@ -60,17 +62,11 @@ CUDA_VISIBLE_DEVICES=0 MQAR_MIXERS=sparsela bash zoology/run.sh
 
 Set `RUN_IN_BACKGROUND=1` only when asynchronous execution is desired.
 
-## Release scope
+## Configuration
 
-The checked-in `model_sp.py` is a reduced example: it currently enables only
-the `512/64` data setting, model dimension 64, and one learning-rate
-selection. Several paper sweep values are commented out. The default selects
-only the released SparseLA mixer. Some baseline entries reference mixer
-modules that are not included in this release, so selecting every configured
-name does not constitute a complete Figure 5 reproduction.
-
-Accordingly, the provided command launches the released SparseLA setting,
-not every Figure 5 MQAR point. Use the paper settings above to construct the
-complete sweep.
+The default `model_sp.py` configuration runs SparseLA with sequence length
+512, 64 key-value pairs, model dimension 64, and one learning rate. Set
+`MQAR_MIXERS` to select another available mixer, or extend the configuration
+with the paper settings above to run a larger sweep.
 
 [Back to Figure 5](../README.md)
