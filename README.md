@@ -1,6 +1,6 @@
 # Dendritic computation bridges neuroscience and foundation models
 
-[![DOI](https://zenodo.org/badge/1330869591.svg)](https://doi.org/10.5281/zenodo.21967669)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21967669.svg)](https://doi.org/10.5281/zenodo.21967669)
 
 Official code release for the paper **“Dendritic computation bridges neuroscience and foundation models.”**
 
