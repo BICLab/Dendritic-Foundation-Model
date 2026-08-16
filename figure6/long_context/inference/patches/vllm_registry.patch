@@ -1,0 +1,8 @@
+--- a/vllm/model_executor/models/registry.py
++++ b/vllm/model_executor/models/registry.py
+@@ -37,4 +37,5 @@ _TEXT_GENERATION_MODELS = {
+     "ArcticForCausalLM": ("arctic", "ArcticForCausalLM"),
+     "MiniMaxText01ForCausalLM": ("minimax_text_01", "MiniMaxText01ForCausalLM"),
++    "SparseLAHForCausalLM": ("sparse_la_h", "SparseLAHForCausalLM"),
+     # baichuan-7b, upper case 'C' in the class name
+     "BaiChuanForCausalLM": ("baichuan", "BaiChuanForCausalLM"),

@@ -1,0 +1,86 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.venv/
+venv/
+env/
+
+# CUDA and native-extension build artifacts
+*.o
+*.obj
+*.a
+*.dylib
+*.cubin
+*.fatbin
+*.ptx
+*.cu.o
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+# IDE and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local datasets and generated caches
+/data/
+/datasets/
+**/data/raw/
+**/data/processed/
+**/data/downloads/
+**/data/cache/
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.parquet
+
+# Model weights and checkpoints
+*.bin
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+checkpoints/
+checkpoint/
+ckpt/
+weights/
+
+# Experiment outputs and logs
+outputs/
+output/
+output_dir/
+work_dirs/
+wandb/
+runs/
+logs/
+*.log
+*.out
+events.out.tfevents.*
+slurm-*.out
+
+# Profiling and temporary files
+*.prof
+*.trace
+*.tmp
+tmp/
+temp/

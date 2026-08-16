@@ -1,0 +1,32 @@
+{
+  "add_bos_token": false,
+  "architectures": [
+    "MetaLAForCausalLM"
+  ],
+  "auto_map": {
+    "AutoConfig": "configuration_metala.MetaLAConfig",
+    "AutoModelForCausalLM": "modeling_metala.MetaLAForCausalLM"
+  },
+  "bias": false,
+  "bos_token_id": 100261,
+  "causal": true,
+  "decoder_attention_heads": 8,
+  "decoder_embed_dim": 1024,
+  "decoder_layers": 26,
+  "eos_token_id": 100257,
+  "expand_ratio": 3,
+  "glu_act": "silu",
+  "glu_dim": 2816,
+  "init_std": 0.02,
+  "model_type": "metala",
+  "no_scale_embedding": false,
+  "norm_type": "simplermsnorm",
+  "pad_token_id": 100262,
+  "torch_dtype": "float32",
+  "transformers_version": "4.38.2",
+  "use_cache": true,
+  "use_gk": true,
+  "use_gv": false,
+  "use_norm": false,
+  "vocab_size": 100280
+}

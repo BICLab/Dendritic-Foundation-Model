@@ -1,0 +1,31 @@
+{
+  "add_bos_token": false,
+  "architectures": [
+    "Hgrn2ForCausalLM"
+  ],
+  "auto_map": {
+    "AutoConfig": "configuration_hgrn2.Hgrn2Config",
+    "AutoModelForCausalLM": "modeling_hgrn2.Hgrn2ForCausalLM"
+  },
+  "bias": false,
+  "bos_token_id": 0,
+  "causal": true,
+  "decoder_embed_dim": 1024,
+  "decoder_layers": 26,
+  "eos_token_id": 2,
+  "expand_ratio": 128,
+  "glu_act": "none",
+  "glu_dim": 2816,
+  "in_act": "none",
+  "init_std": 0.02,
+  "model_type": "hgrn",
+  "no_scale_embedding": true,
+  "norm_type": "simplermsnorm",
+  "out_act": "silu",
+  "pad_token_id": 1,
+  "torch_dtype": "float32",
+  "transformers_version": "4.38.2",
+  "use_cache": true,
+  "use_norm": true,
+  "vocab_size": 100280
+}
